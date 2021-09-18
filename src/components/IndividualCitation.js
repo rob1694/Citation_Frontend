@@ -1,13 +1,13 @@
 import React from "react";
 
 
-function individualCitation( { citation, displayEnforcerName } ) {
+function individualCitation( { citation, displayEnforcerName, displayOffenderName } ) {
 
-    const { offender_id, enforcer_id, violation, amount, due_date, summons, summons_date, created_at } = citation
+    const { violation, amount, due_date, summons, summons_date, created_at } = citation
 
     return(
         <div>
-            {/* <h4>Offender: {displayOffenderName}</h4> */}
+            <h4>Offender: {displayOffenderName}</h4>
             <h4>Enforced By: {displayEnforcerName}</h4>
             <h4>Violation: {violation}</h4>
             <h4>Amount Due: {amount}</h4>

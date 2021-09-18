@@ -8,7 +8,10 @@ function individualOffender( { offender } ) {
         <div>
             <h2>{offender.name}</h2>   
             
-            <CitationContainer/>        
+            <CitationContainer
+            offenderID = {offender.id}
+            offenderName = {offender.name}
+            />        
         </div>
     )
 

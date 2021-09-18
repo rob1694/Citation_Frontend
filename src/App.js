@@ -22,9 +22,6 @@ function App() {
         <Route path="/offenders">
           <OffendersContainer/>
         </Route>
-        <Route path="/citations">
-          <CitationContainer/>
-        </Route>
         <Route path="*">
           <Redirect to="/"/>
         </Route>

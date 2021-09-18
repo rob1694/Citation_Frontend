@@ -23,8 +23,7 @@ const [offenders, setOffenders] = useState([])
 
     return(
         <div>
-            {viewOffenders}
-            
+            {viewOffenders}            
         </div>
     )
 }

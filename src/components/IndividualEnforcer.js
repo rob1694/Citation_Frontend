@@ -9,7 +9,8 @@ function individualEnforcer( { enforcer, offender } ) {
         <div>
             <h2>{name} Badge #: {badge_number}</h2>
             <CitationContainer
-            enforcer = {enforcer}
+            enforcerID = {enforcer.id}
+            enforcerName = {enforcer.name}
             />
         </div>
     )
