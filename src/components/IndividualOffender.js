@@ -1,11 +1,13 @@
 import React from "react";
+import CitationContainer from "./CitationContainer";
 
 
 function individualOffender( { offender } ) {
 
     return(
         <div>
-            <h4>{offender.name}</h4>           
+            <h2>{offender.name}</h2>   
+            <CitationContainer/>        
         </div>
     )
 

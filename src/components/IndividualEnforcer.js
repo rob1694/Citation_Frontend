@@ -1,5 +1,5 @@
 import React from "react";
-
+import CitationContainer from "./CitationContainer";
 
 function individualEnforcer( { enforcer } ) {
 
@@ -7,9 +7,8 @@ function individualEnforcer( { enforcer } ) {
 
     return(
         <div>
-            <h4>{name}</h4>
-            <h4>Badge #: {badge_number}</h4>
-            
+            <h2>{name} Badge #: {badge_number}</h2>
+            <CitationContainer/>
         </div>
     )
 

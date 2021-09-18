@@ -4,6 +4,8 @@ import NavBar from './components/Navbar.js';
 import MainPage from './components/MainPage.js'
 import EnforcersContainer from "./components/EnforcersContatiner";
 import OffendersContainer from "./components/OffendersContainer";
+import CitationContainer from "./components/CitationContainer";
+
 
 
 function App() {
@@ -20,9 +22,9 @@ function App() {
         <Route path="/offenders">
           <OffendersContainer/>
         </Route>
-        {/* <Route path="/citations">
-          
-        </Route> */}
+        <Route path="/citations">
+          <CitationContainer/>
+        </Route>
         <Route path="*">
           <Redirect to="/"/>
         </Route>

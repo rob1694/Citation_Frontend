@@ -16,6 +16,7 @@ const [offenders, setOffenders] = useState([])
             <IndividualOffender
             key = {offe.id}
             offender = {offe}
+            
             />
             )
         )
@@ -23,6 +24,7 @@ const [offenders, setOffenders] = useState([])
     return(
         <div>
             {viewOffenders}
+            
         </div>
     )
 }
