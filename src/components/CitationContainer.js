@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import IndividualCitation from "./IndividualCitation";
 
-function CitationContainer() {
+function CitationContainer( { enforcer } ) {
 
 
     const [citations, setCitations] = useState([])
@@ -13,14 +13,30 @@ function CitationContainer() {
           .then((json) => setCitations(json))
         }, []);
         
+        function displayEnforcerName (citation) {
+            if (enforcer.id === citation.enforcer_id) {
+                return (enforcer.name)
+            }
+        }
 
-        const viewCitations = citations.map((cit) => (
+        // function displayOffenderName (citation) {
+        //     if (offender.id === citation.offender_id) {
+        //         return ( offender.name)
+        //     }
+        // }
+
+        const viewCitations = citations.map(cit => {
+            if (cit.enforcer_id === enforcer.id) {
+                return (
             <IndividualCitation
             key = {cit.id}
             citation = {cit}
+            displayEnforcerName = {displayEnforcerName(cit)}
             />
-            )
-        )
+                )
+            }
+        }
+    )
      return (
             <div>
                 {viewCitations}

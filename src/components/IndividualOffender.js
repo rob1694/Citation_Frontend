@@ -7,6 +7,7 @@ function individualOffender( { offender } ) {
     return(
         <div>
             <h2>{offender.name}</h2>   
+            
             <CitationContainer/>        
         </div>
     )
