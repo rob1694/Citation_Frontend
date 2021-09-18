@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/Navbar.js';
 import MainPage from './components/MainPage.js'
 import EnforcersContainer from "./components/EnforcersContatiner";
+import OffendersContainer from "./components/OffendersContainer";
 
 
 function App() {
@@ -16,10 +17,10 @@ function App() {
         <Route path="/enforcers">
           <EnforcersContainer/>
         </Route>
-        {/* <Route path="/offenders">
-          
+        <Route path="/offenders">
+          <OffendersContainer/>
         </Route>
-        <Route path="/citations">
+        {/* <Route path="/citations">
           
         </Route> */}
         <Route path="*">
