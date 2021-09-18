@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import './App.css';
+import NavBar from './components/Navbar.js';
+import MainPage from './components/MainPage.js'
+import EnforcersContainer from "./components/EnforcersContatiner";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar/>
+      <Switch>
+        <Route exact path="/">
+          <MainPage />
+        </Route>
+        <Route path="/enforcers">
+          <EnforcersContainer/>
+        </Route>
+        {/* <Route path="/offenders">
+          
+        </Route>
+        <Route path="/citations">
+          
+        </Route> */}
+        <Route path="*">
+          <Redirect to="/"/>
+        </Route>
+        
+      </Switch>
+    </Router>
   );
 }
 
