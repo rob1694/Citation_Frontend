@@ -25,18 +25,18 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             }
         }
 
-        const viewCitations = citations.map((cit) => (
-            // if (cit.enforcer_id === enforcerID) {
-            //     return (
+        const viewCitations = citations.map((cit) => {
+            if (cit.enforcer_id === enforcerID || cit.offender_id === offenderID) {
+                return (
             <IndividualCitation
             key = {cit.id}
             citation = {cit}
             displayEnforcerName = {displayEnforcerName(cit)}
             displayOffenderName = {displayOffenderName(cit)}
             />
-        //         )
-        //     }
-        )
+                )
+            }
+        }
     )
      return (
             <div>
