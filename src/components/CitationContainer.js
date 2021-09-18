@@ -13,17 +13,9 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
           .then((json) => setCitations(json))
         }, []);
         
-        function displayEnforcerName (citation) {
-            if (enforcerID === citation.enforcer_id) {
-                return (enforcerName)
-            }
-        }
+        const displayEnforcerName = () => (enforcerName);
 
-        function displayOffenderName (citation) {
-            if (offenderID === citation.offender_id) {
-                return ( offenderName)
-            }
-        }
+        const displayOffenderName = () => (offenderName);
 
         const viewCitations = citations.map((cit) => {
             if (cit.enforcer_id === enforcerID || cit.offender_id === offenderID) {
@@ -31,11 +23,16 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             <IndividualCitation
             key = {cit.id}
             citation = {cit}
-            displayEnforcerName = {displayEnforcerName(cit)}
-            displayOffenderName = {displayOffenderName(cit)}
+            displayEnforcerName = {displayEnforcerName()}
+            displayOffenderName = {displayOffenderName()}
             />
                 )
             }
+            else return (
+                <h3>
+                    No Active Citations
+                </h3>
+            )
         }
     )
      return (
