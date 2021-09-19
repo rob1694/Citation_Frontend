@@ -8,7 +8,7 @@ function EnforcersContainer() {
 const [enforcers, setEnforcers] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/enforcers')
+        fetch('https://citation-backend.herokuapp.com/enforcers')
           .then(r => r.json())
           .then((json) => setEnforcers(json))
         }, []);

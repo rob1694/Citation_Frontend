@@ -7,7 +7,7 @@ function OffendersContainer() {
 const [offenders, setOffenders] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/offenders')
+        fetch('https://citation-backend.herokuapp.com/offenders')
           .then(r => r.json())
           .then((json) => setOffenders(json))
         }, []);

@@ -39,7 +39,7 @@ function IssueCitation ( { onAddCitation }) {
         summons_date: formData.summons_date
     }
 
-    fetch( 'http://localhost:3000/citation', { 
+    fetch( 'https://citation-backend.herokuapp.com/citations', { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",

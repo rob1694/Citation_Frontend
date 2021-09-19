@@ -33,7 +33,7 @@ function EnforcerForm ( { onAddEnforcer } ) {
         badge_number: formData.badge_number
     }
 
-    fetch( 'http://localhost:3000/enforcers', { 
+    fetch( 'https://citation-backend.herokuapp.com/enforcers', { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",

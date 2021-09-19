@@ -9,13 +9,13 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
     const [citations, setCitations] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:3000/citations')
+        fetch('https://citation-backend.herokuapp.com/citations')
           .then(r => r.json())
           .then((json) => setCitations(json))
         }, []);
 
         function deleteCitation(CitationID) {
-            const newURL = `${'http://localhost:3000/citations'}/${CitationID}`;
+            const newURL = `${'https://citation-backend.herokuapp.com/citations'}/${CitationID}`;
             const config = { method: "DELETE" };
             fetch(newURL, config)
               .then(r => r.json())
@@ -26,7 +26,7 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
           }
 
           function patchCitation(CitationID, updatedCitation) {
-            fetch(`${'http://localhost:3000/citations'}/${CitationID}`, {
+            fetch(`${'https://citation-backend.herokuapp.com/citations'}/${CitationID}`, {
               method: "PATCH",
               headers: {
                 "Content-Type": "application/json",
@@ -72,6 +72,7 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             deleteCitation = {deleteCitation}
             payCitation = {payCitation}
             disputeCitation = {disputeCitation}
+            onAddCitation = {addCitation}
         
             />
                 )
