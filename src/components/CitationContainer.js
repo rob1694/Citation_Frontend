@@ -6,6 +6,7 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
 
 
     const [citations, setCitations] = useState([])
+    const [visible, setVisible] = useState(true)
 
     useEffect(() => {
         fetch('http://localhost:3000/citations')
@@ -47,9 +48,8 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
           }
 
           function payCitation(CitationID) {
-              const setAmountTo0 = {amount: 0}
-
-              patchCitation(CitationID, setAmountTo0)
+              const paid = {amount: 0, due_date: "No amount owed"}
+              patchCitation(CitationID, paid)
           }
 
         const viewCitations = citations.map((cit) => {
@@ -62,6 +62,7 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             displayOffenderName = {displayOffenderName()}
             deleteCitation = {deleteCitation}
             payCitation = {payCitation}
+        
             />
                 )
             }

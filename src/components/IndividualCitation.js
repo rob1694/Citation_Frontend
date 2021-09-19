@@ -1,7 +1,14 @@
 import React from "react";
 
 
-function individualCitation( { citation, displayEnforcerName, displayOffenderName, deleteCitation, payCitation } ) {
+function individualCitation({ 
+    citation, 
+    displayEnforcerName, 
+    displayOffenderName, 
+    deleteCitation, 
+    payCitation,
+    switchPaytoPaid 
+}) {
 
     const { id, violation, amount, due_date, summons, summons_date, created_at, updated_at } = citation
 
@@ -11,12 +18,6 @@ function individualCitation( { citation, displayEnforcerName, displayOffenderNam
 
     function handlePayCitation() {
         payCitation(id)
-    }
-
-    function switchPaytoPaid () {
-        const paid = "Paid"
-        return (paid)
-
     }
 
     return(
@@ -30,9 +31,9 @@ function individualCitation( { citation, displayEnforcerName, displayOffenderNam
             <h4>Summmons Date (If Applicable){summons_date}</h4>
             <h4>Date Issued: {created_at}</h4>
             <h4>Date Updated: {updated_at}</h4>
-            <button onClick = {handleDeleteCitation}>Resolve CItation</button>
+            <button onClick = {handleDeleteCitation}>Resolve Citation</button>
             <button onClick = {handlePayCitation}>Pay Citation</button>
-            <button>Dispute</button> 
+            <button >Dispute</button> 
         </div>
     )
 
