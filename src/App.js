@@ -4,7 +4,6 @@ import NavBar from './components/Navbar.js';
 import MainPage from './components/MainPage.js'
 import EnforcersContainer from "./components/EnforcersContatiner";
 import OffendersContainer from "./components/OffendersContainer";
-import CitationContainer from "./components/CitationContainer";
 
 
 

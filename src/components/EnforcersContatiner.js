@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import IndividualEnforcer from "./IndividualEnforcer";
+import EnforcerForm from "./EnforcerForm";
 
 function EnforcersContainer() {
 
@@ -12,16 +13,24 @@ const [enforcers, setEnforcers] = useState([])
           .then((json) => setEnforcers(json))
         }, []);
 
+        function addEnforcer(enforcer) {
+            setEnforcers([...enforcers, enforcer]);
+          }
+
         const viewEnforcers = enforcers.map((enf) => (
             <IndividualEnforcer
             key = {enf.id}
             enforcer = {enf}
+
             />
             )
         )
 
     return(
         <div>
+            <EnforcerForm 
+            onAddEnforcer = {addEnforcer}
+            />
             {viewEnforcers}
         </div>
     )

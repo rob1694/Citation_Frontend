@@ -12,6 +12,7 @@ function individualEnforcer( { enforcer, offender } ) {
             enforcerID = {enforcer.id}
             enforcerName = {enforcer.name}
             />
+            Issue Citation
         </div>
     )
 
