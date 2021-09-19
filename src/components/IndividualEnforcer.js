@@ -1,7 +1,7 @@
 import React from "react";
 import CitationContainer from "./CitationContainer";
 
-function individualEnforcer( { enforcer, offender } ) {
+function IndividualEnforcer( { enforcer } ) {
 
     const { name, badge_number } = enforcer
 
@@ -12,10 +12,10 @@ function individualEnforcer( { enforcer, offender } ) {
             enforcerID = {enforcer.id}
             enforcerName = {enforcer.name}
             />
-            Issue Citation
+            
         </div>
     )
 
 }
 
-export default individualEnforcer;
+export default IndividualEnforcer;

@@ -1,22 +1,18 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import IndividualCitation from "./IndividualCitation";
+import IssueCitation from "./IssueCitation";
 
 function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName } ) {
 
 
     const [citations, setCitations] = useState([])
-    const [visible, setVisible] = useState(true)
 
     useEffect(() => {
         fetch('http://localhost:3000/citations')
           .then(r => r.json())
           .then((json) => setCitations(json))
         }, []);
-        
-        const displayEnforcerName = () => (enforcerName);
-
-        const displayOffenderName = () => (offenderName);
 
         function deleteCitation(CitationID) {
             const newURL = `${'http://localhost:3000/citations'}/${CitationID}`;
@@ -52,6 +48,19 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
               patchCitation(CitationID, paid)
           }
 
+          function disputeCitation(CitationID) {
+            const dispute = {due_date: "Pending Dispute"}
+            patchCitation(CitationID, dispute)
+          }
+
+          const displayEnforcerName = () => (enforcerName);
+
+          const displayOffenderName = () => (offenderName);
+
+          function addCitation(citation) {
+            setCitations([...citations, citation]);
+          }
+
         const viewCitations = citations.map((cit) => {
             if (cit.enforcer_id === enforcerID || cit.offender_id === offenderID) {
                 return (
@@ -62,6 +71,7 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             displayOffenderName = {displayOffenderName()}
             deleteCitation = {deleteCitation}
             payCitation = {payCitation}
+            disputeCitation = {disputeCitation}
         
             />
                 )
@@ -73,8 +83,11 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             )
         }
     )
+
+
      return (
             <div>
+                <IssueCitation onAddCitation = {addCitation}/>
                 {viewCitations}
             </div>
             )
