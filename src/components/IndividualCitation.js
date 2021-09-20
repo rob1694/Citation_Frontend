@@ -31,7 +31,7 @@ function individualCitation({
             <h4>Violation: {violation}</h4>
             <h4>Amount Due: {amount}</h4>
             <h4>Payment Due: {due_date}</h4>
-            <h4>Summmons Date (If Applicable){summons_date}</h4>
+            <h4>Summons Date (If Applicable){summons_date}</h4>
             <h4>Date Issued: {created_at}</h4>
             <h4>Date Updated: {updated_at}</h4>
             <button onClick = {handleDeleteCitation}>Resolve Citation</button>

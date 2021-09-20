@@ -62,8 +62,8 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
           }
 
         const viewCitations = citations.map((cit) => {
-            if (cit.enforcer_id === enforcerID || cit.offender_id === offenderID) {
-                return (
+          if (cit.enforcer_id === enforcerID || cit.offender_id === offenderID) {
+              return (
             <IndividualCitation
             key = {cit.id}
             citation = {cit}
@@ -72,19 +72,13 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             deleteCitation = {deleteCitation}
             payCitation = {payCitation}
             disputeCitation = {disputeCitation}
-            onAddCitation = {addCitation}
-        
-            />
-                )
+                />
+               )
             }
-            else return (
-                <h3>
-                    No Active Citations
-                </h3>
-            )
-        }
-    )
+          }
+        )
 
+        
 
      return (
             <div>
