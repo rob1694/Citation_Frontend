@@ -48,10 +48,10 @@ function EnforcerForm ( { onAddEnforcer } ) {
         return (
             <div>
                 <h3>Register Enforcer</h3>  
-                  <form onSubmit = {handleSubmit}>
-                     <input name = "name" placeholder = "Name" value = {formData.name} onChange = {handleChange}/>
-                     <input name = "badge_number" placeholder = "Badge Number" value = {formData.badge_number} onChange = {handleChange}/>
-                     <button> Submit </button>
+                  <form class ="row" onSubmit = {handleSubmit}>
+                     <input class = "col" name = "name" placeholder = "Name" value = {formData.name} onChange = {handleChange}/>
+                     <input class = "col" name = "badge_number" placeholder = "Badge Number" value = {formData.badge_number} onChange = {handleChange}/>
+                     <button class="btn btn-primary "> Submit </button>
                   </form>
             </div>
         )

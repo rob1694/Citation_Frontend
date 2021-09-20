@@ -23,20 +23,26 @@ function individualCitation({
     function handleDisputeCitation() {
         disputeCitation(id)
     }
+    
 
     return(
-        <div>
-            <h4>Offender: {displayOffenderName}</h4>
-            <h4>Enforced By: {displayEnforcerName}</h4>
-            <h4>Violation: {violation}</h4>
-            <h4>Amount Due: {amount}</h4>
-            <h4>Payment Due: {due_date}</h4>
-            <h4>Summons Date (If Applicable){summons_date}</h4>
-            <h4>Date Issued: {created_at}</h4>
-            <h4>Date Updated: {updated_at}</h4>
-            <button onClick = {handleDeleteCitation}>Resolve Citation</button>
-            <button onClick = {handlePayCitation}>Pay Citation</button>
-            <button onClick = {handleDisputeCitation}>Dispute</button> 
+        <div class = "container" >
+            <h4 class="list-group-item" >Offender: {displayOffenderName}</h4>
+            <h4 class="list-group-item">Enforced By: {displayEnforcerName}</h4>
+            <h4 class="list-group-item">Violation: {violation}</h4>
+            <h4 class="list-group-item">Amount Due: {amount}</h4>
+            <h4 class="list-group-item">Payment Due: {due_date}</h4>
+            <h4 class="list-group-item">Summons Date (If Applicable){summons_date}</h4>
+            <div class ="card-footer text-muted">
+                <h4>Date Issued: {created_at}</h4>
+                <h4>Date Updated: {updated_at}</h4>
+            </div>
+            <div>
+                <button type="button" class="btn btn-success btn-lg" onClick = {handleDeleteCitation}>Resolve Citation</button>
+            </div>
+
+            <button type="button" class="btn btn-primary "onClick = {handlePayCitation}>Pay Citation</button>
+            <button type="button" class="btn btn-warning"onClick = {handleDisputeCitation}>Dispute</button> 
         </div>
     )
 

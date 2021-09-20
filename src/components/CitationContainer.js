@@ -53,10 +53,6 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             patchCitation(CitationID, dispute)
           }
 
-          const displayEnforcerName = () => (enforcerName);
-
-          const displayOffenderName = () => (offenderName);
-
           function addCitation(citation) {
             setCitations([...citations, citation]);
           }
@@ -67,8 +63,8 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             <IndividualCitation
             key = {cit.id}
             citation = {cit}
-            displayEnforcerName = {displayEnforcerName()}
-            displayOffenderName = {displayOffenderName()}
+            displayEnforcerName = {enforcerName}
+            displayOffenderName = {offenderName}
             deleteCitation = {deleteCitation}
             payCitation = {payCitation}
             disputeCitation = {disputeCitation}
