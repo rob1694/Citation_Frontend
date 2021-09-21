@@ -53,12 +53,14 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             patchCitation(CitationID, dispute)
           }
 
+
           function addCitation(citation) {
             setCitations([...citations, citation]);
           }
 
-        const viewCitations = citations.map((cit) => {
-          if (cit.enforcer_id === enforcerID || cit.offender_id === offenderID) {
+          const filteredCitation = citations.filter(cit => cit.enforcer_id === enforcerID || cit.offender_id === offenderID)
+
+        const viewCitations = filteredCitation.map((cit) => {
               return (
             <IndividualCitation
             key = {cit.id}
@@ -70,7 +72,6 @@ function CitationContainer( { enforcerID, enforcerName, offenderID, offenderName
             disputeCitation = {disputeCitation}
                 />
                )
-            }
           }
         )
 
